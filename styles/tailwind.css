@@ -1,0 +1,6 @@
+/* 그 외 tailwind에 관련된 지시어 목록들은 아래의 문서 참조 */
+/* https://tailwindcss.com/docs/functions-and-directives */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

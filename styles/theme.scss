@@ -1,0 +1,138 @@
+// * colors
+$color-primary: #0cb0e1;
+$color-secondary: #673ab7;
+$color-info: #3f51b5;
+$color-warning: #ff9800;
+$color-inherit: inherit;
+$color-success: #4caf50;
+$color-danger: #f44336;
+$color-white: #ffffff;
+$color-black: #0d0e0f;
+$color-gray-1: #f8f9fa;
+$color-gray-2: #f1f3f5;
+$color-gray-3: #e9ecef;
+$color-gray-4: #dee2e6;
+$color-gray-5: #ced4da;
+$color-gray-6: #adb5bd;
+$color-gray-7: #868e96;
+$color-gray-8: #495057;
+$color-gray-9: #292d2f;
+$color-gray-10: #151718;
+
+// * theme colors
+$light-text-color: #0d0e0f;
+$dark-text-color: white;
+
+// * 라이트 테마일 때 색상 설정
+html.light {
+  background-color: white;
+  color: $light-text-color;
+
+  // * tag
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-gray-10;
+  }
+
+  header {
+    background-color: $color-gray-1;
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+  }
+
+  footer {
+    background-color: $color-gray-1;
+  }
+
+  button {
+    color: $color-black;
+  }
+
+  // * class
+}
+
+// * 다크 테마일 때 색상 설정
+html.dark {
+  background-color: black;
+  color: $dark-text-color;
+
+  // * tag
+  header,
+  footer {
+    backdrop-filter: blur(0.313rem);
+    -webkit-backdrop-filter: blur(0.313rem);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-gray-1;
+  }
+
+  header {
+    background-color: $color-gray-10;
+    box-shadow: 0 0.25rem 1.875rem rgba(255, 255, 255, 0.1);
+  }
+
+  footer {
+    background-color: $color-gray-10;
+  }
+
+  button {
+    color: $color-white;
+  }
+
+  // * class
+}
+
+// * 공통 색상 설정
+html.light,
+html.dark {
+  // * tag
+  a {
+    color: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: transparent;
+  }
+
+  button {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  // * class
+  button {
+    &.primary {
+      background-color: $color-primary;
+    }
+    &.secondary {
+      background-color: $color-secondary;
+    }
+    &.info {
+      background-color: $color-info;
+    }
+    &.warning {
+      background-color: $color-warning;
+    }
+    &.inherit {
+      background-color: $color-inherit;
+      border: 1px solid $color-gray-5;
+    }
+    &.success {
+      background-color: $color-success;
+    }
+    &.danger {
+      background-color: $color-danger;
+    }
+  }
+}
