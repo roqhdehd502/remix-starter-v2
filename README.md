@@ -1,7 +1,28 @@
 # Remix Starter V2
 
 기존 [remix-starter](https://github.com/crispy43/remix-starter/tree/main)의 v2 버전입니다.  
-다크&라이트 테마, postcss와 SCSS, i18next, remix-development-tools, recoil, eslint, husky, remix-validated-form과 yup이 적용되어 있는 remix starter 탬플릿입니다.
+다크&라이트 테마, postcss와 SCSS, tailwind, i18next, remix-development-tools, recoil, eslint, husky, remix-validated-form과 yup이 적용되어 있는 remix starter 탬플릿입니다.
+
+## 추가 업데이트 내역
+
+### WebSocket connection to 'ws://localhost:8080/socket' failed: (2023-11-15 작성)
+
+StreamingSSR 관련 문제로 [WebSocket 연결이 끊어지는 현상](https://github.com/remix-run/remix/issues/7663)이 있었습니다.
+
+따라서, remix.config.js 파일에서 다음과 같은 설정을 추가했습니다.
+
+```js
+/** @type {import('@remix-run/dev').AppConfig} */
+module.exports = {
+  ...
+
+  dev: {
+    port: 8080,
+  },
+};
+```
+
+이는 개발(dev) 환경에서만 port를 지정했으므로, 테스트 및 배포 환경에서는 추가 설정이 필요합니다.
 
 ## 변경사항 (V1 -> V2)
 
