@@ -9,7 +9,7 @@
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
     "generate:css": "sass styles/:app/styles/",
-    "start": "remix-serve build",
+    "start": "node server.mjs",
     "typecheck": "tsc",
     "prepare": "husky install"
   },
@@ -20,6 +20,7 @@
     "@remix-run/serve": "^2.2.0",
     "@remix-run/web-fetch": "^4.4.1",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-fs-backend": "^2.2.0",

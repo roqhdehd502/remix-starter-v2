@@ -5,6 +5,30 @@
 
 ## 추가 업데이트 내역
 
+### Express 포팅 (2024-01-08 작성)
+
+SSR 관련 터미널 내 로그 확인을 이유로 Remix Express를 이용하여 포팅 작업을 진행했습니다.
+
+따라서, 루트 디렉토리의 server.mjs 파일을 추가하여 로그 관련 로직을 기입하였습니다.
+
+```js
+// server.mjs
+...
+// 액션이 발생한 시간과 종류, 반응시간 등을 출력
+app.use(morgan(
+  '\x1b[7m:date[iso]\x1b[0m :method :url :status :res[content-length] - :response-time ms',
+));
+...
+```
+
+또한, 로그 확인을 이용한 개발 환경에서 실행을 희망하는 경우 터미널에서 다음과 같은 커맨드를 입력 하시면 됩니다.
+
+```bash
+yarn start
+```
+
+자세한 부분은 루트 디렉토리의 server.mjs, package.json을 참고바랍니다.
+
 ### WebSocket connection to 'ws://localhost:8080/socket' failed: (2023-11-15 작성)
 
 StreamingSSR 관련 문제로 [WebSocket 연결이 끊어지는 현상](https://github.com/remix-run/remix/issues/7663)이 있었습니다.
@@ -130,7 +154,7 @@ Remix는 [Streaming SSR](https://remix.run/docs/en/main/styling/css-in-js)의 �
 
 ```tsx
 // v1
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default function Template() {
   return <Wrapper>template</Wrapper>;
@@ -250,11 +274,11 @@ $font-stack: Pretendard Variable, sans-serif;
 이후 scss 파일은 컴파일되어 ./app/styles/ 경로에 CSS 파일로 저장됩니다. 사용할 때는 이 CSS 파일을 [links](https://remix.run/docs/en/1.19.3/route/links)에 추가합니다.
 
 ```tsx
-import styles from '~/styles/styles.css';
+import styles from "~/styles/styles.css";
 
 export const links: LinksFunction = () => [
   /* ... */
-  { rel: 'stylesheet', href: styles },
+  { rel: "stylesheet", href: styles },
   /* ... */
 ];
 ```
@@ -292,9 +316,11 @@ common은 기본적인 네임스페이스가 되고 json 파일의 명칭에 따
 
 ```tsx
 const Component = () => {
-  const { t } = useTranslation('namespace' /* 네임스페이스 없을 경우 common 기본 */);
+  const { t } = useTranslation(
+    "namespace" /* 네임스페이스 없을 경우 common 기본 */
+  );
 
-  return <p>{t('title')}</p>;
+  return <p>{t("title")}</p>;
 };
 ```
 
