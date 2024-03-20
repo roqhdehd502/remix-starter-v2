@@ -57,9 +57,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding: 0 1.25rem;
 
   & > div {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: var(--header-height);
   }

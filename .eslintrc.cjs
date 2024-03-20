@@ -5,6 +5,7 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { jsx: true },
   },
+  ignorePatterns: ['app/components/icons/*'],
   rules: {
     'indent': [
       'error',
@@ -15,6 +16,7 @@ module.exports = {
       'warn',
       {
         allow: [
+          'info',
           'warn',
           'error',
           'test',

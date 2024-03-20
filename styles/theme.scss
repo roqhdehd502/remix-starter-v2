@@ -1,32 +1,42 @@
+// * external scss
+@use 'button' as *;
+
 // * colors
-$color-primary: #0cb0e1;
-$color-secondary: #673ab7;
-$color-info: #3f51b5;
-$color-warning: #ff9800;
-$color-inherit: inherit;
-$color-success: #4caf50;
-$color-danger: #f44336;
-$color-white: #ffffff;
-$color-black: #0d0e0f;
-$color-gray-1: #f8f9fa;
-$color-gray-2: #f1f3f5;
-$color-gray-3: #e9ecef;
-$color-gray-4: #dee2e6;
-$color-gray-5: #ced4da;
-$color-gray-6: #adb5bd;
-$color-gray-7: #868e96;
-$color-gray-8: #495057;
-$color-gray-9: #292d2f;
-$color-gray-10: #151718;
+$white: #ffffff;
+$black: #0d0e0f;
+$primary: #0cb0e1;
+$secondary: #673ab7;
+$info: #3f51b5;
+$warning: #ff9800;
+$inherit: inherit;
+$transparent: transparent;
+$success: #4caf50;
+$danger: #f44336;
+$gray-1: #f8f9fa;
+$gray-2: #f1f3f5;
+$gray-3: #e9ecef;
+$gray-4: #dee2e6;
+$gray-5: #ced4da;
+$gray-6: #adb5bd;
+$gray-7: #868e96;
+$gray-8: #495057;
+$gray-9: #292d2f;
+$gray-10: #151718;
 
 // * theme colors
-$light-text-color: #0d0e0f;
-$dark-text-color: white;
+$light-text-color: $black;
+$dark-text-color: $white;
 
 // * 라이트 테마일 때 색상 설정
 html.light {
-  background-color: white;
-  color: $light-text-color;
+  // * CSS color 변수
+  --white: #{$white};
+  --black: #{$black};
+  --text-color: #{$light-text-color};
+
+  // * 기본 색상
+  background-color: var(--white);
+  color: var(--text-color);
 
   // * tag
   h1,
@@ -35,20 +45,20 @@ html.light {
   h4,
   h5,
   h6 {
-    color: $color-gray-10;
+    color: $gray-10;
   }
 
   header {
-    background-color: $color-gray-1;
+    background-color: $gray-1;
     box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
   }
 
   footer {
-    background-color: $color-gray-1;
+    background-color: $gray-1;
   }
 
   button {
-    color: $color-black;
+    color: $black;
   }
 
   // * class
@@ -56,14 +66,23 @@ html.light {
 
 // * 다크 테마일 때 색상 설정
 html.dark {
-  background-color: black;
-  color: $dark-text-color;
+  // * CSS color 변수
+  --white: #{$white};
+  --black: #{$black};
+  --text-color: #{$dark-text-color};
+
+  // * 기본 색상
+  background-color: var(--black);
+  color: var(--text-color);
 
   // * tag
-  header,
+  header {
+    background-color: $gray-1;
+    box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
+  }
+
   footer {
-    backdrop-filter: blur(0.313rem);
-    -webkit-backdrop-filter: blur(0.313rem);
+    background-color: $gray-1;
   }
 
   h1,
@@ -72,20 +91,20 @@ html.dark {
   h4,
   h5,
   h6 {
-    color: $color-gray-1;
+    color: $gray-1;
   }
 
   header {
-    background-color: $color-gray-10;
+    background-color: $gray-10;
     box-shadow: 0 0.25rem 1.875rem rgba(255, 255, 255, 0.1);
   }
 
   footer {
-    background-color: $color-gray-10;
+    background-color: $gray-10;
   }
 
   button {
-    color: $color-white;
+    color: $white;
   }
 
   // * class
@@ -94,45 +113,36 @@ html.dark {
 // * 공통 색상 설정
 html.light,
 html.dark {
+  // * CSS color 변수
+  --white: #{$white};
+  --black: #{$black};
+  --gray-1: #{$gray-1};
+  --gray-2: #{$gray-2};
+  --gray-3: #{$gray-3};
+  --gray-4: #{$gray-4};
+  --gray-5: #{$gray-5};
+  --gray-6: #{$gray-6};
+  --gray-7: #{$gray-7};
+  --gray-8: #{$gray-8};
+  --gray-9: #{$gray-9};
+  --border-color: #{$gray-3};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --info: #{$info};
+  --warning: #{$warning};
+  --inherit: #{$inherit};
+  --transparent: #{$transparent};
+  --success: #{$success};
+  --danger: #{$danger};
+
   // * tag
   a {
-    color: inherit;
+    color: var(--inherit);
   }
 
   input,
   textarea,
   select {
-    background-color: transparent;
-  }
-
-  button {
-    background-color: $color-primary;
-    border-color: $color-primary;
-  }
-
-  // * class
-  button {
-    &.primary {
-      background-color: $color-primary;
-    }
-    &.secondary {
-      background-color: $color-secondary;
-    }
-    &.info {
-      background-color: $color-info;
-    }
-    &.warning {
-      background-color: $color-warning;
-    }
-    &.inherit {
-      background-color: $color-inherit;
-      border: 1px solid $color-gray-5;
-    }
-    &.success {
-      background-color: $color-success;
-    }
-    &.danger {
-      background-color: $color-danger;
-    }
+    background-color: var(--transparent);
   }
 }
