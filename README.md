@@ -173,7 +173,7 @@ export default function Template() {
 ## 설치
 
 2023년 09월 11일, [Node 16버전](https://nodejs.org/en/blog/announcements/nodejs16-eol)의 지원이 중단(End-of-Life) 되었습니다.  
-따라서, 로컬에 기본적으로 18버전 이상의 node.js가 설치되어 있어야합니다.
+따라서, 로컬에 기본적으로 20버전 이상의 node.js가 설치되어 있어야합니다.
 패키지 매니저로는 최신 버전의 yarn 사용을 권장합니다.
 
 yarn이 없는 경우 아래 커맨드로 전역 패키지로 설치

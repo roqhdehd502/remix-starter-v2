@@ -9,6 +9,7 @@
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "remix dev",
     "generate:css": "sass styles/:app/styles/",
+    "icons": "npx @svgr/cli --out-dir app/components/icons -- public/icons",
     "start": "node server.mjs",
     "typecheck": "tsc",
     "prepare": "husky install"
@@ -37,6 +38,10 @@
   "devDependencies": {
     "@remix-run/dev": "^2.2.0",
     "@remix-run/eslint-config": "^2.2.0",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-prettier": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.16",
@@ -53,9 +58,10 @@
     "typescript": "^5.1.6"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint ./app --cache --fix"
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }

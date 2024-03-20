@@ -1,0 +1,37 @@
+button {
+  &.primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+  }
+  &.secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+  }
+  &.info {
+    background-color: var(--info);
+    border-color: var(--info);
+    color: var(--white);
+  }
+  &.warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: var(--white);
+  }
+  &.inherit {
+    background-color: var(--inherit);
+    border: 1px solid var(--gray-5);
+    color: var(--black);
+  }
+  &.success {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--white);
+  }
+  &.danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: var(--white);
+  }
+}

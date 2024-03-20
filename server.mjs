@@ -1,9 +1,10 @@
+import 'dotenv/config';
+
 import { createRequestHandler } from '@remix-run/express';
 import { broadcastDevReady } from '@remix-run/node';
 import express from 'express';
 // import helmet from 'helmet';
 import morgan from 'morgan';
-import 'dotenv/config';
 
 import * as build from './build/index.js';
 
