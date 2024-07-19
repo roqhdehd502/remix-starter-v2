@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
 
@@ -23,10 +24,17 @@ export default function Index() {
           {t('localeChange')}
         </button>
       </div>
+      {/* 샘플 컴포넌트 */}
       <Template
         title={t('button')}
         name={t('button')}
       />
+      {/* 라우트 이동 */}
+      <div className="mt-4">
+        <Link to="/detail">
+          <button className="success">move to detail</button>
+        </Link>
+      </div>
     </section>
   );
 }
