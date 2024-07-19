@@ -1,3 +1,5 @@
+import { Link } from '@remix-run/react';
+
 import { THEME } from '~/common/constants';
 import { HamburgerLight, ThemeLightDark } from '~/components/icons';
 import { useTheme } from '~/hooks/use-theme';
@@ -9,7 +11,9 @@ export default function Header() {
     <header data-container>
       <div>
         <div className="flex justify-start align-middle gap-3">
-          <button>Logo</button>
+          <Link to="/">
+            <button>Logo</button>
+          </Link>
           <HamburgerLight className="w-7" />
         </div>
         <div className="flex grow justify-center">
